@@ -16,7 +16,7 @@ class Asistente{
 
     method entradasAñoPasado() =  historialEntradas.filter( {entrada => entrada.fecha().year() == new Date().year() - 1} )
 
-    method bandasQueComproEntrada() = historialEntradas.map({entrada => entrada.banda()}).asSet()
+    method bandasQueComproEntrada() = historialEntradas.map({entrada => entrada.banda().nombre()}).asSet()
 
     /*Tambien podría haberse hecho que el asistente muestre su abono y la empresa lo modifique (a mi en cuanto a responsabilidades se me hace más logico), 
     pero tambien este formato permite evitar preguntar para ordenar*/
@@ -35,7 +35,7 @@ class Fan{
 
 class Vip{
     var descuentoAbono = 0
-    method precio(entrada) = entrada.precio() * descuentoAbono
+    method precio(entrada) = entrada.precio() * (1-descuentoAbono)
     method incrementarDescuento(){
         descuentoAbono += 0.01
     }
