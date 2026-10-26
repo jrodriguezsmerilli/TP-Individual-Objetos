@@ -3,6 +3,7 @@ class Banda{
     var nombre
     var canon = 1000000
 
+    method nombre() = nombre
     method presupuesto() = canon + self.costoExtra()
     method costoExtra()
     method popularidad()
@@ -27,7 +28,7 @@ class BandaIndie inherits Banda{
 
 class BandaTrap inherits Banda {
 
-    var ice
+    var tieneIce
 
     /*Sería más correcto cambiar el canon dependiendo de la popularidad, pero es más facil sobreescribir el metodo presupuesto.
     
