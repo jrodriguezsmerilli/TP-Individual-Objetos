@@ -18,6 +18,10 @@ object productora{
         entradasVendidas.add(nuevaEntrada)
     }
 
+    method agregarBanda(unaBanda) {
+        bandas.add(unaBanda)
+    }
+
     method gananciaTotal() = entradasVendidas.sum({entrada => entrada.precio()}) - bandas.sum({banda => banda.presupuesto()})
 
     method cantidadEntradasVendidas() = entradasVendidas.size()
